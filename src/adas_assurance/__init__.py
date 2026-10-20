@@ -1,5 +1,11 @@
 """ADAS Assurance Studio public API."""
+
+from .models import Detection, Frame, GroundTruth, HumanReview, ObjectState, SensorObservation
 from .studio import AssuranceStudio
-from .models import Detection, Frame, GroundTruth, ObjectState, SensorObservation
-__all__ = ["AssuranceStudio", "Detection", "Frame", "GroundTruth", "ObjectState", "SensorObservation"]
-__version__ = "0.1.0"
+
+__version__ = "0.2.0"
+
+__all__ = [
+    "AssuranceStudio", "Detection", "Frame", "GroundTruth", "HumanReview",
+    "ObjectState", "SensorObservation",
+]
