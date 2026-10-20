@@ -46,10 +46,11 @@ class ReportStore:
             value = self._reports.get(run_id)
             if value is not None:
                 return value
-        if self.directory and run_id and all(c.isalnum() or c == "-" for c in run_id):
-            target = self.directory / f"{run_id}.json"
-            if target.is_file():
-                return json.loads(target.read_text(encoding="utf-8"))
+        if self.directory:
+            expected_name = f"{run_id}.json"
+            for candidate in self.directory.iterdir():
+                if candidate.is_file() and candidate.name == expected_name:
+                    return json.loads(candidate.read_text(encoding="utf-8"))
         return None
 
 
