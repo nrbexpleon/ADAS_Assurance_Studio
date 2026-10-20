@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adas-assurance-studio"
-version = "0.1.0"
+version = "0.2.0"
 description = "Deterministic ADAS perception, fusion, ODD and scenario assurance workbench"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -13,8 +13,10 @@ dependencies = []
 
 [project.scripts]
 adas-assurance = "adas_assurance.cli:main"
+adas-assurance-server = "adas_assurance.server:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
 where = ["src"]
